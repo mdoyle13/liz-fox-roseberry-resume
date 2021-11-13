@@ -1,6 +1,16 @@
 @import 'reset';
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url("https://use.typekit.net/qto6kiv.css");
+
+@mixin font-bold {
+  font-weight: 700;
+  font-style: normal;
+}
+@mixin font-regular {
+  font-weight: 400;
+  font-style: normal;
+}
 
 body {
-  font-family: 'PT Sans', sans-serif;
+  font-family: pt-mono, monospace;
+  @include font-regular;
 }
