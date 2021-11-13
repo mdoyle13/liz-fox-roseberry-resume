@@ -1,16 +1,67 @@
 @import 'reset';
 @import url("https://use.typekit.net/qto6kiv.css");
-
-@mixin font-bold {
+@mixin text-bold {
   font-weight: 700;
   font-style: normal;
 }
-@mixin font-regular {
+@mixin text-regular {
   font-weight: 400;
   font-style: normal;
 }
 
+$black: #0A0A0A;
+
 body {
   font-family: pt-mono, monospace;
-  @include font-regular;
+  @include text-regular;
+  background-color: #FBFAF3;
+  color: $black;
+}
+
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 100px;
+}
+
+h1 {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 2px solid $black;
+  // for nested
+  flex: 1;
+}
+
+.row > .row {
+  border: none;
+}
+
+.col {
+  flex: 1;
+  border-right: 2px solid $black;
+}
+
+.col-1of2 {
+  width: 50%;
+}
+
+.shrink-to-fit {
+  flex: none;
+}
+
+.t-bold {
+ @include text-bold;
+}
+
+.t-regular {
+ @include text-regular;
 }
