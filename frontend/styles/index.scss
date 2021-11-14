@@ -19,7 +19,7 @@ body {
 }
 
 main {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 1em auto 3em auto;
 }
 
@@ -87,15 +87,110 @@ h1, h2 {
 }
 
 .col-1of2 {
-  width: 50%;
+  width: calc(50% - 2px);
+  &:last-of-type {
+    width: 50%;
+  }
 }
 
 .col-1of4 {
   flex: 0 0 25%;
 }
 
-.col .content-wrapper {
-  padding: 40px 0 0 40px;
+// components
+.contact-info-wrapper {
+  padding: 40px;
+}
+
+.resume-section-title {
+  h2 {
+    text-align: right;
+    padding: 40px 40px 0 0;
+  }
+}
+
+.resume-section-content-wrapper {
+  padding: 40px 25px 0 25px;
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
+}
+
+.resume-section-job-title {
+  text-transform: none;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  &.no-bottom-margin {
+    margin-bottom: 25px;
+  }
+}
+
+.resume-reference-title {
+  padding-top: 20px;
+  padding-right: 40px;
+  text-align: right;
+}
+
+.resume-section-reference-wrapper {
+  text-align: center;
+  padding: 20px;
+  p {
+    margin: 0;
+  }
+}
+
+// responsive styles
+@media screen and (max-width: 768px) {
+  .contact-info-wrapper {
+    padding: 15px;
+  }
+  
+  .resume-section-title h2 {
+    text-align: left;
+    padding-left: 25px;
+  }
+  
+  .resume-sections-wrapper {
+    flex-direction: column;
+    .col {
+      border-right: none;
+    }
+  }
+}
+
+// hide the middle section in header
+@media screen and (max-width: 800px) {
+  .header-col .content-wrapper {
+    padding-left: 20px;
+  }
+  
+  .hidden-800 {
+    display: none;
+  }
+  
+  // center the logo in its column
+  .logo-wrapper {
+    flex: 1 !important;
+  }
+  
+  .logo {
+    margin: 0 auto
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .references {
+    .col {
+      border: none;
+    }
+    
+    flex-direction: column;
+    .resume-reference-title {
+      text-align: center;
+      padding-right: 0;
+    }
+  }
 }
 
 .t-bold {
@@ -104,6 +199,26 @@ h1, h2 {
 
 .t-regular {
  @include text-regular;
+}
+
+.t-lower {
+  text-transform: none;
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.no-margin {
+  margin: 0;
 }
 
 .border-bottom {
