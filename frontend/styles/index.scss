@@ -20,14 +20,16 @@ body {
 
 main {
   max-width: 1300px;
-  margin: 0 auto;
+  margin: 1em auto 0 auto;
 }
 
 .logo {
+  display: block;
+  padding: 0 25px 15px 25px;
   width: 100px;
 }
 
-h1 {
+h1, h2 {
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -37,8 +39,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   border-bottom: 2px solid $black;
-  // for nested
-  flex: 1;
 }
 
 .row > .row {
@@ -46,12 +46,26 @@ h1 {
 }
 
 .col {
-  flex: 1;
+  align-items: center;
   border-right: 2px solid $black;
+  display: flex;
+  flex: 1;
+}
+
+.col.fi-stretch {
+  align-items: stretch;
+}
+
+.col:last-of-type {
+  border-right: none;
 }
 
 .col-1of2 {
   width: 50%;
+}
+
+.col-1of4 {
+  flex: 0 0 25%;
 }
 
 .shrink-to-fit {
