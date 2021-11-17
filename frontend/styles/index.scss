@@ -11,17 +11,23 @@
 
 $black: #0A0A0A;
 
+html {
+  // 1 rem ~ 10px
+  font-size: 62.5%;
+}
+
 body {
-  font-family: pt-mono, monospace;
   @include text-regular;
   background-color: #FBFAF3;
   color: $black;
+  font-family: pt-mono, monospace;
+  font-size: 1.6em;
 }
 
 main {
   max-width: 1000px;
   min-width: 384px;
-  margin: 1em auto 3em auto;
+  margin: 1.6rem auto 3rem auto;
 }
 
 .logo {
