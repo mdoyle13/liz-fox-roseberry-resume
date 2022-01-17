@@ -1,7 +1,7 @@
 const browserSync = require("browser-sync").create();
 
 // You can change these configuration values:
-const proxy = "http://localhost:4001"
+const proxy = "http://127.0.0.1:4001"
 const port = 4000
 const uiPort = 4002
 
